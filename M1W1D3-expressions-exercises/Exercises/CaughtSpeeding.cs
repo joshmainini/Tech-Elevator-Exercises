@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    public partial class Exercises
-    {
-        /*
+	public partial class Exercises
+	{
+		/*
          You are driving a little too fast, and a police officer stops you. Write code to compute the result, 
          encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, the 
          result is 0. If speed is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the 
@@ -17,10 +17,26 @@ namespace Exercises
          caughtSpeeding(65, false) → 1
          caughtSpeeding(65, true) → 0
          */
-        public int CaughtSpeeding(int speed, bool isBirthday)
-        {
-            return 0;
-        }
+		public int CaughtSpeeding(int speed, bool isBirthday)
+		{
+			if (isBirthday)
+			{
+				speed -= 5;
+			}
+			if (speed <= 60)
+			{
+				return 0;
+			}
+			else if (speed > 60 && speed <= 81)
+			{
+				return 1;
+			}
+			else
+			{
+				return 2;
+			}
 
-    }
-}
+		}
+
+			}
+		}

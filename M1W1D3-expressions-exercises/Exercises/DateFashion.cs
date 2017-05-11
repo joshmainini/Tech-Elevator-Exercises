@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    public partial class Exercises
-    {
-        /*
+	public partial class Exercises
+	{
+		/*
         You and your date are trying to get a table at a restaurant. The parameter "you" is the stylishness
         of your clothes, in the range 0..10, and "date" is the stylishness of your date's clothes. The result
         getting the table is encoded as an int value with 0=no, 1=maybe, 2=yes. If either of you is very 
@@ -18,10 +18,26 @@ namespace Exercises
         dateFashion(5, 2) → 0
         dateFashion(5, 5) → 1
         */
-        public int DateFashion(int you, int date)
-        {
-            return 0;
-        }
+		public int DateFashion(int you, int date)
+		{
+			bool youVeryStylish = you >= 8;
+			bool dateVeryStylish = date >= 8;
+			bool youNoStyle = you <= 2;
+			bool dateNoStyle = date <= 2;
+			if (youVeryStylish || dateVeryStylish)
+			{
+				return 2;
+			}
+			else if (youNoStyle || dateNoStyle)
+			{
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+			}
+		}
 
-    }
-}
+
+	}

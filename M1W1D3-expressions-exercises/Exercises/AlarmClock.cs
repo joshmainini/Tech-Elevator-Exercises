@@ -18,9 +18,27 @@ namespace Exercises
          alarmClock(5, false) → "7:00"
          alarmClock(0, false) → "10:00"
          */
-        public string AlarmClock(int day, bool vacation)
-        {
-            return "";
+        public string AlarmClock(int day, bool vacation){
+			bool isWeekend = day == 6 || day == 0;
+			if (vacation && isWeekend)
+			{
+				return "off";
+			}
+			else if (vacation && !isWeekend)
+			{
+				return "10:00";
+			}
+			else if (!isWeekend)
+			{
+				return "7:00";
+
+			}
+			else
+			{
+				return "10:00";
+			}
+
+			
         }
 
     }

@@ -17,7 +17,17 @@ namespace Exercises
          */
         public bool In3050(int a, int b)
         {
-            return false;
+			bool lowInRange = ((a >= 30) && (a <= 40)) && ((b >= 30) && (b <= 40)); 
+			bool highInRange = ((a >= 40) && (b <= 50)) && ((b >= 40) && (b <= 50)); 
+			if (lowInRange || highInRange)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
         }
 
     }

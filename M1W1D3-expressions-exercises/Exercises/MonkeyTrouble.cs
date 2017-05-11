@@ -18,8 +18,18 @@ namespace Exercises
          monkeyTrouble(true, false) → false
          */
         public bool MonkeyTrouble(bool aSmile, bool bSmile)
-        {
-            return false;
+        {if (aSmile && bSmile)
+			{
+				return true;
+			}
+			else if (!aSmile && !bSmile)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
         }
 
     }

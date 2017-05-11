@@ -19,7 +19,23 @@ namespace Exercises
          */
         public int TeaParty(int tea, int candy)
         {
-            return 0;
+			bool greatParty = (tea >= (candy * 2) || candy >= (tea * 2));
+			bool checkForFive = (tea >= 5 && candy >= 5);
+			if (checkForFive)
+			{
+				if (greatParty)
+				{
+					return 2;
+				}
+				else
+				{
+					return 1;
+				}
+			}
+			else
+			{
+				return 0;
+			}
         }
 
     }

@@ -16,8 +16,22 @@ namespace Exercises
         */
         public int IntMax(int a, int b, int c)
         {
-            return 0;
-        }
+			/*bool aBiggestInt = a > b && a > c;
+			bool bBiggestInt = b > a && b > c;
+			bool cBiggestInt = c > a && c > b;*/
+			if (a >= b && a >= c)
+			{
+				return a;
+			}
+			else if (b >= a && b >= c)
+			{
+				return b;
+			}
+			else
+			{
+				return c;
+			}
+		}
 
     }
 }
