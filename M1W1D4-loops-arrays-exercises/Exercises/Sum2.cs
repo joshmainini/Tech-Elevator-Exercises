@@ -16,8 +16,8 @@ namespace Exercises
          sum2([1, 1, 1, 1]) → 2
          */
         public int Sum2(int[] nums)
-        {
-            return 0;
+		{
+			return nums[0] += nums[1];
         }
 
     }

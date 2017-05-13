@@ -6,18 +6,31 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    public partial class Exercises
-    {
-        /*
+	public partial class Exercises
+	{
+		/*
          Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
          has22([1, 2, 2]) → true
          has22([1, 2, 1, 2]) → false
          has22([2, 1, 2]) → false
          */
-        public bool Has22(int[] nums)
-        {
-            return false;
-        }
-
-    }
+		public bool Has22(int[] nums)
+		{
+			bool result = false;
+			for (int i = 0; i < nums.Length; i++)
+			{
+				if (nums[i] == 2)
+				{
+					if (i != nums.Length - 1)
+					{
+						if (nums[i + 1] == 2)
+						{
+							result = true;
+						}
+					}
+				}
+			}
+			return result;
+		}
+	}
 }

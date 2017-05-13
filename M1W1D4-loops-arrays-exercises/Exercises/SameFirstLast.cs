@@ -18,8 +18,18 @@ namespace Exercises
          */
         public bool SameFirstLast(int[] nums)
         {
-            return false;
-        }
+           bool result = false;
+			for (int i = 0; i < nums.Length; i++)
+			{ bool isGreaterThanOne = nums.Length > 1;
+
+				if (isGreaterThanOne && nums[0] == nums[nums.Length - 1])
+				{
+					result = true;
+				}
+				
+			}
+			return result;
+		}
 
     }
 }
