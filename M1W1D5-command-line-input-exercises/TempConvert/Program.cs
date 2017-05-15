@@ -27,9 +27,34 @@ namespace TempConvert
          */
         static void Main(string[] args)
         {
+			Console.WriteLine("Please enter the temperature: ");
+			string stringTemp = Console.ReadLine();
+			Console.WriteLine("Is the temperature in (C)elcius, or (F)arenheit)? ");
+			string tempType = Console.ReadLine();
+
+			double originalTemp = double.Parse(stringTemp);
+			double result = 0;
+
+			if (tempType == "F")
+			{
+				result = (originalTemp - 32) / 1.8;
+				Console.WriteLine($"{originalTemp}F is {result}C");
+			}
+			if (tempType == "C")
+			{
+				result = originalTemp * 1.8 + 32;
+				Console.WriteLine($"{originalTemp}C is {result}F");
+			}
 
 
 
-        }
+
+
+
+
+
+
+
+		}
     }
 }

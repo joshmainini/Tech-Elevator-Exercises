@@ -26,7 +26,25 @@ namespace LinearConvert
 
         static void Main(string[] args)
         {
+			Console.WriteLine("Please enter the length: ");
+			string stringLength = Console.ReadLine();
+			Console.WriteLine("Is the measurement in (m)eters, or (f)eet? ");
+			string lengthType = Console.ReadLine();
 
-        }
+			double originalLength = double.Parse(stringLength);
+			double result = 0;
+
+			if (lengthType == "m")
+			{
+				result = originalLength * 3.2808399;
+				Console.WriteLine($"{originalLength}m is {result}f");
+			}
+			if (lengthType == "f")
+			{
+				result = originalLength * 0.3048;
+				Console.WriteLine($"{originalLength}f is {result}m");
+			}
+
+		}
     }
 }

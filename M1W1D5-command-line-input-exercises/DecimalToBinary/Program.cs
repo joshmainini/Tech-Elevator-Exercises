@@ -25,6 +25,31 @@ namespace DecimalToBinary
 
         static void Main(string[] args)
         {
-        }
+			Console.Write("Please enter in a series of decimal values (separated by spaces): ");
+			string[] decimalString = Console.ReadLine().Split(' ');
+			int[] decimalNumber = new int[decimalString.Length];
+
+			for (int i = 0; i < decimalString.Length; i++)
+			{
+				int x = int.Parse(decimalString[i]);
+				decimalNumber[i] = x;
+			}
+
+			int remainder;
+			for (int i = 0; i < decimalNumber.Length; i++)
+			{
+				string result = string.Empty;
+				while (decimalNumber[i] > 0)
+				{
+					remainder = decimalNumber[i] % 2;
+					decimalNumber[i] /= 2;
+					result = remainder.ToString() + result;
+				}
+				Console.WriteLine(decimalNumber[i] + " " + "in binary is" + " " + result);
+			}
+
+			
+
+		}
     }
 }
