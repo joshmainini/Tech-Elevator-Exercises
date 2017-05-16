@@ -17,7 +17,8 @@ namespace Exercises
         */
         public string MakeAbba(string a, string b)
         {
-            return null;
+			string newString = String.Concat(a, b, b, a);
+			return newString;
         }
     }
 }

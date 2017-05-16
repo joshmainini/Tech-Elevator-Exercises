@@ -16,7 +16,19 @@ namespace Exercises
          */
         public bool EndsLy(string str)
         {
-            return false;
-        }
-    }
+			bool result = false;
+			if (str.Length >= 2)
+			{
+				if (str[str.Length - 1] == 'y')
+				{
+					if (str[str.Length - 2] == 'l')
+					{
+						result = true;
+					}
+				}
+			}
+			return result;
+					
+		}
+    }	
 }

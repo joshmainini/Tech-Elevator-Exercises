@@ -17,7 +17,24 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+			string result = "";
+			for (int i = 0; i < str.Length; i++)
+			{
+				if (i == 0 || i == str.Length - 1)
+				{
+					result = string.Concat(result, str[i]);
+				}
+				else
+				{
+					if (str[i] != 'x')
+					{
+						result = string.Concat(result, str[i]);
+					}
+				}
+			}
+			return result;
+
+
         }
     }
 }

@@ -16,8 +16,15 @@ namespace Exercises
          left2("Hi") → "Hi"
          */
         public string Left2(string str)
-        {
-            return null;
+		{
+			string str1 = str.Substring(0, 2);
+			string str2 = "";
+			if (str.Length > 2)
+			{
+				str2 = str.Substring(2);
+			}
+			string result = str2 + str1;
+			return result;
         }
     }
 }

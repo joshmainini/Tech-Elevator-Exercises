@@ -16,7 +16,9 @@ namespace Exercises
          */
         public string HelloName(string name)
         {
-            return null;
+			string hello = "Hello";
+			string helloName = String.Concat(hello, " " , name, "!");
+            return helloName;
         }
 
     }

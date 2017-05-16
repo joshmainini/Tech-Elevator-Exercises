@@ -15,8 +15,12 @@ namespace Exercises
          firstHalf("abcdef") → "abc"
          */
         public string FirstHalf(string str)
-        {
-            return null;
+        { string result = "";
+			for (int i = 0; i < str.Length/2; i++)
+			{
+				result = String.Concat(result, str[i]);
+			}
+			return result;
         }
     }
 }

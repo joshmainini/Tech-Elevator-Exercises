@@ -17,8 +17,17 @@ namespace Exercises
         combostring("aaa", "b") → "baaab"
         */
         public string ComboString(string a, string b)
-        {
-            return null;
+        { string result;
+			if (a.Length > b.Length)
+			{
+				result = b + a + b;
+			}
+			else
+			{
+				result = a + b + a;
+			}
+			return result; 
+				
         }
     }
 }
