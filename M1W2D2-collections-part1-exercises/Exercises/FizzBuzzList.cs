@@ -22,6 +22,35 @@ namespace Exercises
          */
         public List<string> FizzBuzzList(int[] integerArray)
         {
+			List<int> myList = new List<int>();
+			List<string> myStringList = new List<string>();
+			myList.AddRange(integerArray);
+
+			foreach (int x in myList)
+			{
+				if (x % 3 == 0)
+				{
+					;
+				}
+				else if (x % 5 == 0)
+				{
+					;
+				}
+					string result = x.ToString();
+					myStringList.Add(result);
+			}
+			foreach (string y in myStringList)
+			{
+				if (y == "")
+				{
+					myStringList.Remove("");
+				}
+
+
+
+
+
+
             return null;
         }
 
