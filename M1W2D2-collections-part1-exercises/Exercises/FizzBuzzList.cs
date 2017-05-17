@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    public partial class Exercises
-    {
-        /*
+	public partial class Exercises
+	{
+		/*
          Given an array of Integers, return a List that contains the same Integers (as Strings). Except any multiple of 3
          should be replaced by the String "Fizz", any multiple of 5 should be replaced by the String "Buzz",
          and any multiple of both 3 and 5 should be replaced by the String "FizzBuzz"
@@ -20,39 +20,31 @@ namespace Exercises
          
          HINT: To convert an integer x to a string you can call x.ToString() in your code (e.g. if x = 1 then x.ToString() equals "1")
          */
-        public List<string> FizzBuzzList(int[] integerArray)
-        {
-			List<int> myList = new List<int>();
+		public List<string> FizzBuzzList(int[] integerArray)
+		{
 			List<string> myStringList = new List<string>();
-			myList.AddRange(integerArray);
 
-			foreach (int x in myList)
+
+			for (int i = 0; i < integerArray.Length; i++)
 			{
-				if (x % 3 == 0)
+				if (integerArray[i] % 3 == 0 && integerArray[i] % 5 == 0)
 				{
-					;
+					myStringList.Add("FizzBuzz");
 				}
-				else if (x % 5 == 0)
+				else if (integerArray[i] % 5 == 0)
 				{
-					;
+					myStringList.Add("Buzz");
 				}
-					string result = x.ToString();
-					myStringList.Add(result);
+				else if (integerArray[i] % 3 == 0)
+				{
+					myStringList.Add("Fizz");
+				}
+				else
+				{
+					myStringList.Add(integerArray[i].ToString());
+				}
 			}
-			foreach (string y in myStringList)
-			{
-				if (y == "")
-				{
-					myStringList.Remove("");
-				}
-
-
-
-
-
-
-            return null;
-        }
-
-    }
+			return myStringList;
+		}
+	}
 }

@@ -6,19 +6,28 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    public partial class Exercises
-    {
-        /*
+	public partial class Exercises
+	{
+		/*
          Given an array of Strings, return a List containing the same Strings in the same order 
          except for any words that contain exactly 4 characters.
          no4LetterWords( {"Train", "Boat", "Car"} )  ->  ["Train", "Car"]
          no4LetterWords( {"Red", "White", "Blue"} )  ->  ["Red", "White"]
          no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
          */
-        public List<string> No4LetterWords(string[] stringArray)
-        {
-            return null;
-        }
+		public List<string> No4LetterWords(string[] stringArray)
+		{
+			List<string> stringList = new List<string>();
+			foreach (string objects in stringArray)
+			{
+				if (objects.Length != 4)
+				{
+					stringList.Add(objects);
+				}
 
-    }
+			}
+				return stringList;
+
+		}
+	}
 }
