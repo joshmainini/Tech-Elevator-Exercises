@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    public partial class Exercises
-    {
-        /*
+	public partial class Exercises
+	{
+		/*
          * Given an array of int values, return a Dictionary<int, int> with a key for each int, with the value the 
          * number of times that int appears in the array.
          * 
@@ -19,9 +19,27 @@ namespace Exercises
          * intCount([]) → {}
          * 
          */
-        public Dictionary<int, int> IntCount(int[] ints)
-        {
-            return null;
-        }
-    }
+		public Dictionary<int, int> IntCount(int[] ints)
+		{
+			Dictionary<int, int> newDictionary = new Dictionary<int, int>();
+
+			foreach (int number in ints)
+			{
+				if (newDictionary.ContainsKey(number))
+				{
+					newDictionary[number] += 1;
+				}
+				else
+				{
+					newDictionary.Add(number, 1);
+				}
+			}
+
+			return newDictionary;
+
+
+
+		}
+	}
 }
+		

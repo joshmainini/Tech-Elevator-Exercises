@@ -8,7 +8,7 @@ namespace Exercises
 {
     public partial class Exercises
     {
-        /*
+		/*
          * Just when you thought it was safe to get back in the water --- last2Revisited!!!!
          * 
          * Given an array of strings, for each string, the count of the number of times that a substring length 2 appears 
@@ -23,9 +23,30 @@ namespace Exercises
          * last2Revisited(["hixxhi", "xaxxaxaxx", "axxxaaxx"]) → {"hixxhi": 1, "xaxxaxaxx": 1, "axxxaaxx": 2}
          * 
          */
-        public Dictionary<string, int> Last2Revisted(string[] words)
-        {
-            return null;
-        }
+		public Dictionary<string, int> Last2Revisted(string[] words)
+		{
+			int count = 0;
+			Dictionary<string, int> last2Dictionary = new Dictionary<string, int>();
+
+			foreach (string word in words)
+			{
+				for (int i = 0; i < word.Length - 2; i++)
+				{
+					string endString = word.Substring(word.Length - 2);
+					string wordSubString = word.Substring(i, 2);
+
+					if (wordSubString.Equals(endString))
+					{
+						count++;
+					}
+				}
+				last2Dictionary.Add(word, count);
+				count = 0;
+
+
+			}
+			return last2Dictionary;
+		}
+			
     }
 }
