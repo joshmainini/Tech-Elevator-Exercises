@@ -51,7 +51,7 @@ namespace Individual.Exercises.Classes
 		{
 			get
 			{
-				fullname = firstName + " " + lastName;
+				fullname = lastName + ", " + firstName;
 				return fullname;
 			}
 		}
@@ -77,6 +77,7 @@ namespace Individual.Exercises.Classes
 		{
 			double newPercentage = percent / 100;
 			double newSalary = annualSalary + (annualSalary * newPercentage);
+			annualSalary = newSalary;
 			return;
 		}
 

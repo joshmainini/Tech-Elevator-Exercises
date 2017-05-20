@@ -48,15 +48,14 @@ namespace Individual.Exercises.Classes
 		}
 		public void GoUp(int desiredFloor)
 		{
-			if (desiredFloor < numberOfLevels)
+			if (doorIsOpen == false && desiredFloor <= numberOfLevels && desiredFloor > CurrentLevel)
 			{
-				doorIsOpen = false;
 				currentLevel = desiredFloor;
 			}
 		}
 		public void GoDown(int desiredFloor)
 		{
-			if (desiredFloor >= 1)
+			if (doorIsOpen == false && desiredFloor >= 1 && desiredFloor < CurrentLevel)
 			{
 				doorIsOpen = false;
 				currentLevel = desiredFloor;

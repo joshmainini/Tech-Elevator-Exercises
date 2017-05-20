@@ -16,7 +16,8 @@ namespace Individual.Exercises.Classes
 		public Television()
 		{
 			isOn = false;
-			currentVolume = 3;
+			currentVolume = 2;
+			currentChannel = 3;
 		}
 		public bool IsOn
 		{
@@ -62,7 +63,7 @@ namespace Individual.Exercises.Classes
 			{
 				currentChannel++;
 			}
-			if (currentChannel == 18)
+			else if(isOn && currentChannel == 18)
 			{
 				currentChannel = 3;
 			}
@@ -73,7 +74,7 @@ namespace Individual.Exercises.Classes
 			{
 				currentChannel--;
 			}
-			if (currentChannel == 3)
+			else if (isOn && currentChannel == 3)
 			{
 				currentChannel = 18;
 			}

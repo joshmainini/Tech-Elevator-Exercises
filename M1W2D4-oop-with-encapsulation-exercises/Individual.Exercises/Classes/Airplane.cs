@@ -59,7 +59,7 @@ namespace Individual.Exercises.Classes
 				return bookedCoachSeats;
 			}
 		}
-		public int AvailbleCoachSeats
+		public int AvailableCoachSeats
 		{
 			get
 			{
@@ -78,12 +78,12 @@ namespace Individual.Exercises.Classes
 		{
 			bool result = false;
 
-			if (forFirstClass == true && availableFirstClassSeats > totalNumberOfSeats)
+			if (forFirstClass == true && AvailableFirstClassSeats >= totalNumberOfSeats)
 			{
 				bookedFirstClassSeats += totalNumberOfSeats;
 				result = true;
 			}
-			if (forFirstClass == false &&  availableCoachSeats > totalNumberOfSeats)
+			if (forFirstClass == false &&  AvailableCoachSeats >= totalNumberOfSeats)
 			{
 				bookedCoachSeats += totalNumberOfSeats;
 				result = true;

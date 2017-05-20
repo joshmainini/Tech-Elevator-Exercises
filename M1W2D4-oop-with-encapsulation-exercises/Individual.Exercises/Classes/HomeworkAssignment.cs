@@ -51,7 +51,7 @@ namespace Individual.Exercises.Classes
 		{
 			get
 			{
-				double result = totalMarks / possibleMarks;
+				double result = (double)totalMarks / possibleMarks;
 				if (result >= 0.90)
 				{
 					letterGrade = "A";
