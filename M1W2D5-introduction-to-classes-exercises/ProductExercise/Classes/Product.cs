@@ -8,6 +8,22 @@ namespace TechElevator.Classes
 {
     public class Product
     {
-        // Class Code Goes Here
+		private string name;
+		private decimal price;
+		private double weightInOunces;
+
+		public string Name
+		{
+			get; set;
+		}
+		public decimal Price
+		{
+			get; set;
+		}
+		public double WeightInOunces
+		{
+			get; set;
+		}
+
     }
 }

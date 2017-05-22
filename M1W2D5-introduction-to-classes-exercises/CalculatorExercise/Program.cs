@@ -11,6 +11,9 @@ namespace CalculatorExercise
     {
         static void Main(string[] args)
         {
+			Calculator myCalculator = new Calculator(8);
+			myCalculator.Power(25);
+			Console.Write(myCalculator.Result);
             /*
              * Feel free to use this file to instante a few objects and see how they can be used
              * in a program. While code you put here must compile, it won't be validated by the automatic
