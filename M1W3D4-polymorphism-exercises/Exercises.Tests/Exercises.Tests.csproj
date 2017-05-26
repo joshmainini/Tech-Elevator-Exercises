@@ -51,9 +51,16 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CarTest.cs" />
+    <Compile Include="FexEdTest.cs" />
+    <Compile Include="FourDayGroundTest.cs" />
+    <Compile Include="NextDayTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondClassTest.cs" />
     <Compile Include="TankTest1.cs" />
+    <Compile Include="ThirdClassTest.cs" />
     <Compile Include="TruckTest.cs" />
+    <Compile Include="FirstClassTest.cs" />
+    <Compile Include="TwoDayGroundTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PostageCalculator\PostageCalculator.csproj">

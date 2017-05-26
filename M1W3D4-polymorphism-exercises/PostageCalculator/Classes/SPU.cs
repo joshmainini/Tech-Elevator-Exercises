@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PostageCalculator.Classes
 {
-	public class PostalService : IDeliveryDriver
+	public class SPU : IDeliveryDriver
 	{
 		public virtual double CalculateRate(int distance, double weight)
 		{

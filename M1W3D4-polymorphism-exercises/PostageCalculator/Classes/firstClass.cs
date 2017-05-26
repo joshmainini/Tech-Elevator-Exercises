@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PostageCalculator.Classes
 {
-	class firstClass : PostalService
+	public class FirstClass : PostalService
 	{
 		public override double CalculateRate(int distance, double weight)
 		{
@@ -37,6 +37,10 @@ namespace PostageCalculator.Classes
 				rate = 0.500 * distance;
 			}
 			return rate;
+		}
+		public override string ToString()
+		{
+			return "Postal Service (1st Class)";
 		}
 	}
 }

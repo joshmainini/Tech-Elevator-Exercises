@@ -43,15 +43,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\FexEd.cs" />
+    <Compile Include="Classes\FirstClass.cs" />
+    <Compile Include="Classes\FourDayGround.cs" />
+    <Compile Include="Classes\IDeliveryDriver.cs" />
+    <Compile Include="Classes\NextDay.cs" />
+    <Compile Include="Classes\PostalService.cs" />
+    <Compile Include="Classes\SecondClass.cs" />
+    <Compile Include="Classes\SPU.cs" />
+    <Compile Include="Classes\ThirdClass.cs" />
+    <Compile Include="Classes\TwoDayGround.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
