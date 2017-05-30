@@ -20,10 +20,13 @@ namespace Exercises
 			{"L",50 },
 			{"XC",90 },
 			{"C",100 },
+			{"CL",150 },
 			{"CD",400 },
 			{"D",500 },
+			{"DC",600 },
 			{"CM",900 },
 			{"M", 1000 },
+			{"MM", 2000 },
 		 };
 
 		public string ConvertToRomanNumeral(int n)
@@ -114,28 +117,37 @@ namespace Exercises
 		{
 			int result = 0;
 
-			foreach (KeyValuePair<string, int> kvp in rmDictionary)
+			if (romanNumeral.Length == 1)
 			{
-
-				for (int i = 0; i < romanNumeral.Length; i++)
+				result = rmDictionary[romanNumeral];
+			}
+			else
+			{
+				for (int i = 0; i < romanNumeral.Length-1; i++)
 				{
-					if (romanNumeral.Substring(0, 2) == (kvp.Key))
+					string rmSubstring = romanNumeral.Substring(i, 2);
+
+					if (rmDictionary.ContainsKey(rmSubstring))
 					{
-						result += kvp.Value;
-						romanNumeral = romanNumeral.Substring(2);
+						result += rmDictionary[rmSubstring];
+						romanNumeral = romanNumeral.Substring(1);
 					}
-					else if (romanNumeral[i].ToString() == (kvp.Key))
+					else if (rmDictionary.ContainsKey(romanNumeral[i].ToString()))
 					{
-						result += kvp.Value;
+						result += rmDictionary[romanNumeral[i].ToString()];
 					}
 				}
-
 			}
 			return result;
-
 		}
 	}
 }
+			
+
+
+
+
+
 
 
 

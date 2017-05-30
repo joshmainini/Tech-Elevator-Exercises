@@ -91,5 +91,35 @@ namespace Exercises.Tests
 
 		}
 
+		[TestMethod]
+		public void ConvertToDigit_150()
+		{
+			KataRomanNumerals romanNumerals = new KataRomanNumerals();
+
+			Assert.AreEqual(150, romanNumerals.ConvertToDigit("CL"));
+
+		}
+
+		[TestMethod]
+		public void ConvertToDigit_2600()
+		{
+			KataRomanNumerals romanNumerals = new KataRomanNumerals();
+
+			Assert.AreEqual(2600, romanNumerals.ConvertToDigit("MMDC"));
+
+		}
+
+		[TestMethod]
+		public void ConvertToDigit_1900()
+		{
+			KataRomanNumerals romanNumerals = new KataRomanNumerals();
+
+			Assert.AreEqual(1900, romanNumerals.ConvertToDigit("MCM"));
+
+		}
+
+
+
+
 	}
 }
