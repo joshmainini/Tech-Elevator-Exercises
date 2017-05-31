@@ -11,9 +11,11 @@ namespace QuizMaker
 	{
 		public static void ReadAFile()
 		{
+			int x = 0;
 			string directory = Environment.CurrentDirectory;
 			string filename = "sample-quiz-file.txt";
 			string fullPath = Path.Combine(directory, filename);
+			int numberOfCorrectAnswers = 0;
 
 			try
 			{
@@ -21,17 +23,16 @@ namespace QuizMaker
 				{
 					while (!sr.EndOfStream)
 					{
-						int correctAnswers = 0;
 						string line = sr.ReadLine();
 						string[] lines = line.Split('|');
-						foreach (string word in lines)
+						for(int i = 0; i< lines.Length; i++)
 						{
-							if (word.Contains('*'))
+							if (lines[i].Contains('*'))
 							{
-								word.Replace('*', ' ');
+								lines[i] = lines[i].Replace('*', ' ');
+								x = i++;
 							}
 						}
-
 
 						Console.WriteLine(lines[0]);
 						Console.WriteLine("1.{0}", lines[1]);
@@ -44,16 +45,20 @@ namespace QuizMaker
 						string stringAnswer = Console.ReadLine();
 						int answer = int.Parse(stringAnswer);
 						Console.WriteLine();
-						if (answer == 2)
+						if (answer == x)
 						{
 							Console.WriteLine("You answered correct!");
-							correctAnswers++;
+							Console.WriteLine();
+							numberOfCorrectAnswers++;
 						}
 						else
 						{
 							Console.WriteLine("Sorry, that isn't correct!");
+							Console.WriteLine();
 						}
 					}
+					Console.WriteLine();
+					Console.WriteLine($"You got {numberOfCorrectAnswers} answer(s) correct out of the total two asked!");
 				}
 			}
 			catch (IOException e)
