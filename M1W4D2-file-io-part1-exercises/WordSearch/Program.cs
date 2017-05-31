@@ -10,6 +10,13 @@ namespace WordSearch
     {
         static void Main(string[] args)
         {
+			FileReader myReader = new FileReader();
+			Console.WriteLine("What is your search string?");
+			myReader.Search = Console.ReadLine();
+			Console.WriteLine("Please provide the full file path.");
+			myReader.FullPath = Console.ReadLine();
+			myReader.WordSearchFileReader();
+			
 			//1. Ask the user for the search string
 			//2. Ask the user for the file path
 			//3. Open the file
@@ -19,4 +26,6 @@ namespace WordSearch
 			
         }
     }
+
+	//C:\Users\jmainini\joshuamainini-c-exercises\M1W4D2-file-io-part1-exercises\alices_adventures_in_wonderland.txt
 }
