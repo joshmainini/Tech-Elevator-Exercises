@@ -20,7 +20,13 @@ namespace Exercises
         */
         public bool CloseFar(int a, int b, int c)
         {
-            return false;
+			bool result = false;
+
+			if (Math.Abs(a - b) < 2 || Math.Abs(a-c) < 2)
+			{
+				result = true;
+			}
+			return result;
         }
     }
 }

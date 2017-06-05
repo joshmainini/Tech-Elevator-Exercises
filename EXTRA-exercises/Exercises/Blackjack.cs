@@ -17,8 +17,34 @@ namespace Exercises
         blackjack(19, 22) → 19
         */
         public int Blackjack(int a, int b)
-        {
-            return 0;
+		{
+			int result = 0;
+
+			if (a > 21)
+			{
+				if (b > 21)
+				{
+					result = 0;
+				}
+				else
+				{
+					result = b;
+				}
+			}
+			else if (b > 21)
+			{
+				result = a;
+			}
+			else if (a > b)
+			{
+				result = a;
+			}
+			else
+			{
+				result = b;
+			}
+
+            return result;
         }
     }
 }
