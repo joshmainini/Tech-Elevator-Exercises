@@ -22,10 +22,21 @@ namespace Exercises
         {
 			bool result = false;
 
-			if (Math.Abs(a - b) < 2 || Math.Abs(a-c) < 2)
+			if (Math.Abs(a - b) < 2)
 			{
-				result = true;
+				if ((Math.Abs(a - c) >= 2) && (Math.Abs(b-c) >=2))
+				{
+					result = true;
+				}
 			}
+			else if (Math.Abs(a - c) < 2)
+			{
+				if ((Math.Abs(a - b) >= 2) && (Math.Abs(c - b) >= 2))
+				{
+					result = true;
+				}
+			}
+
 			return result;
         }
     }
