@@ -90,12 +90,18 @@ ORDER BY Total_Payment DESC;
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store 
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)
 SELECT st.store_id, a.address, COUNT(r.rental_id) AS Total_Rentals, SUM(p.amount) AS Total_Sales, AVG(p.amount) AS Average_Sale
-FROM store st 
-JOIN address a ON st.address_id = a.address_id
-JOIN staff s ON st.store_id = s.store_id
-JOIN rental r ON r.staff_id = s.staff_id
+FROM address a JOIN store st ON st.address_id = a.address_id
+JOIN inventory i ON i.store_id = st.store_id
+JOIN rental r ON r.inventory_id = i.inventory_id
 JOIN payment p ON r.rental_id = p.rental_id
 GROUP BY st.store_id, a.address;
+
+--FROM store st 
+--JOIN address a ON st.address_id = a.address_id
+--JOIN staff s ON st.store_id = s.store_id
+--JOIN rental r ON r.staff_id = s.staff_id
+--JOIN payment p ON r.rental_id = p.rental_id
+--GROUP BY st.store_id, a.address;
 
 
 
