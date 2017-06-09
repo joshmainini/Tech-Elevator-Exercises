@@ -19,7 +19,23 @@ namespace Exercises
         */
         public bool Has271(int[] nums)
         {
-            return false;
+			bool result = false;
+
+			if (nums.Length < 3)
+			{
+				return result;
+			}
+			for (int i = 0; i < nums.Length-1; i++)
+			{
+				if (nums[i] + 5 == nums[i + 1])
+				{
+					if (Math.Abs((nums[i] - 1) - nums[i + 2]) <= 2)
+					{
+						result = true; 
+					}
+				}
+			}
+            return result;
         }
     }
 }

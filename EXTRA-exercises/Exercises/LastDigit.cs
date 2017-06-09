@@ -19,6 +19,8 @@ namespace Exercises
         */
         public bool LastDigit(int a, int b, int c)
         {
+			if ((a % 10 == b % 10)
+				{ }
             return false;
         }
     }

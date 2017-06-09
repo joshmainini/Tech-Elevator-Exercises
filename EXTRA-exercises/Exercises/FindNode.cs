@@ -13,8 +13,19 @@ namespace Exercises
 
         */
         public LinkedListNode<int> FindNode(LinkedList<int> nodes, int n)
-        {            
-            return null;
+		{
+
+			if (nodes.Contains(n))
+			{
+				LinkedListNode<int> myNodes = nodes.Find(n);
+				return myNodes;
+
+			}
+			else
+			{
+				return null;
+			}
+			
         }
     }
 }
