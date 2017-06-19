@@ -16,7 +16,19 @@ namespace Exercises
         */
         public bool MixStart(string str)
         {
-            return false;
+			bool result = false;
+			if (str.Length > 2)
+			{
+				if (str[1] == 'i' && str[2] == 'x')
+				{
+					result = true;
+				}
+			}
+			else
+			{
+				result = false;
+			}
+			return result;
         }
     }
 }

@@ -19,7 +19,36 @@ namespace Exercises
         */
         public int MaxBlock(string str)
         {
-            return 0;
+			List<int> intList = new List<int>();
+			int count = 1;
+			int resultCount = 0;
+
+			for (int i = 0; i < str.Length; i++)
+			{
+				int x = 0;
+
+				while (x < str.Length)
+				{
+					if (str[i] == str[i++])
+					{
+						count++;
+
+						if (count > resultCount)
+						{
+							resultCount = count;
+						}
+					}
+					else if (str[i] != str[i++])
+					{
+						count = 1;
+					}
+					x++;
+				}
+				intList.Add(resultCount);
+			}
+			intList.Reverse();
+
+			return intList[0];
         }
     }
 }

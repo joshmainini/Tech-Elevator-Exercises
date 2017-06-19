@@ -19,9 +19,13 @@ namespace Exercises
         */
         public bool LastDigit(int a, int b, int c)
         {
-			if ((a % 10 == b % 10)
-				{ }
-            return false;
+			bool result = false;
+
+			if ((a % 10 == b % 10) || (a % 10 == c % 10) || (c% 10 == b % 10))
+			{
+				return true;
+			}
+            return result;
         }
     }
 }
