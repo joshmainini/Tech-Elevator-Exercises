@@ -1,0 +1,44 @@
+﻿body {
+}
+html {
+	font: 96px Courier;
+	color: white;
+}
+
+.box {
+	padding: 50px;
+	width: 70px;
+}
+.odd {
+	background-color: #ee3e64;
+
+}
+
+.even {
+	background-color: #44accf;
+}
+
+
+.p_0{
+	display: block;
+	position: center
+
+}
+
+.p_1 {
+	display: inline;
+	position: center;
+}
+
+.p_2 {
+	display: inline;
+	position: center;
+}
+
+.p_3 {
+	display: inline;
+	position: center;
+
+}
+
+

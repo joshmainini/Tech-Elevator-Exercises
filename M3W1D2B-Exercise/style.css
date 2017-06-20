@@ -5,6 +5,13 @@ body {
     margin: 40px 150px 0;
     font-family: Verdana, Geneva, sans-serif;
 }
+.info {
+	background-color: #FFFFFF;
+	color: #373737;
+	text-align: left;
+	margin: 40px 150px 0;
+	font-family: Verdana, Geneva, sans-serif;
+}
 
 header {
     padding: 50px;
