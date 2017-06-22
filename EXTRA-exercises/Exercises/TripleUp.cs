@@ -18,7 +18,15 @@ namespace Exercises
         */
         public bool TripleUp(int[] nums)
         {
-            return false;
+			bool result = false;
+			for(int i = 0; i < nums.Length-2; i++)
+			{
+				if ((nums[i + 1] == nums[i] + 1) && (nums[i + 2] == nums[i] + 2))
+				{
+					result = true;
+				}
+			}
+			return result; 
         }
     }
 }
