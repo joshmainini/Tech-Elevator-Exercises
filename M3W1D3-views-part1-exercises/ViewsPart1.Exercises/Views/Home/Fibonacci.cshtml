@@ -1,0 +1,32 @@
+﻿@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <h1>Exercise 2 - Fibonacci 25 </h1>
+    <div>
+        <ul style="list-style:none;">
+            @{  int x = 0;
+                int y = 1;
+                int fibNumber = 0;
+
+                for (int i = 1; i < 26; i++)
+                {
+                    fibNumber = y + x;
+                    <li>@fibNumber</li>
+                    x = y;
+                    y = fibNumber;
+
+                }
+            }
+       </ul>
+    </div>
+</body>
+</html>
