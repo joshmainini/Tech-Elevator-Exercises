@@ -59,4 +59,88 @@ section {
     border-radius: 7px;
 }
 
-/* Individual Page Styles */
+table {
+    border-collapse: collapse;
+    align-content: center;
+    margin: auto;
+}
+
+    table td {
+        padding: 5px;
+    }
+
+img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.odd {
+    background-color: white;
+}
+
+.even {
+    background-color: antiquewhite;
+}
+
+.RowName {
+    background-color: white;
+}
+
+.star {
+    max-height: 100px;
+    max-width: 100px;
+    position: relative;
+    right: 275px;
+    bottom: 100px;
+}
+
+.star1 {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.toy {
+    position: relative;
+    right: 500px;
+    top: 100px;
+}
+.toy1 {
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.weight {
+    position: relative;
+    right: 285px;
+    bottom: 90px;
+}
+
+.price {
+    position: relative;
+    right: 285px;
+    bottom: 100px;
+    color: red;
+}
+
+.mfr {
+    position: relative;
+    right: 285px;
+    bottom: 100px;
+}
+
+.name {
+    position: relative;
+    right: 285px;
+    bottom: 100px;
+}
+.name1{
+
+}
+
+div {
+    border-bottom: 2px solid grey;
+}
+.tile{
+    display:inline-block;
+    border-bottom: 2px solid white;
+}

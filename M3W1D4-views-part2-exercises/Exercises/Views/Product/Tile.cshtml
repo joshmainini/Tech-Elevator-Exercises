@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using Exercises.Models;
+
+@model List<Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>ASP.NET MVC Exercises - Views Part 2: Models</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+        </ul>
+
+    </nav>
+    <section id="main-content">
+
+<h1><font size ="75">Toy Department</font></h1>
+        @foreach(Product product in Model)
+        {
+            <div class="tile">
+                <img src="~/Content/images/@product.ImageName" class="toy1"/>
+                @if(product.IsTopSeller)
+                {
+                <h5 class="name1">@product.Name <font color="red">BEST SELLER!</font></h5>
+                }
+                else
+                {
+                <h5 class="name1">@product.Name</h5>
+
+                }
+                <p class="mfr1">by @product.Manufacturer</p>
+                <p class="price1">$@product.Price</p>
+                <p class="weight1"><strong>Weight</strong> @product.WeightIbLbs lbs</p>
+                @if (product.AverageRating < 2)
+                {
+                    <img src="~/Content/images/1-star.png" class="star1" />
+                }
+                @if (product.AverageRating >= 2 && product.AverageRating < 3)
+                {
+                    <img src="~/Content/images/2-star.png" class="star1" />
+                }
+                @if (product.AverageRating >= 3 && product.AverageRating < 4)
+                {
+                    <img src="~/Content/images/3-star.png" class="star1" />
+                }
+                @if (product.AverageRating >= 4 && product.AverageRating < 5)
+                {
+                    <img src="~/Content/images/4-star.png" class="star1" />
+                }
+                @if (product.AverageRating == 5)
+                {
+                    <img src="~/Content/images/5-star.png" class="star1"/>
+                }
+
+            </div>
+        }
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

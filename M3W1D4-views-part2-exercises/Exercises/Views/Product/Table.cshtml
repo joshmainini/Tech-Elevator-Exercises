@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+
+@using Exercises.Models;
+
+@model List<Product>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/Content/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>ASP.NET MVC Exercises - Views Part 2: Models</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+        </ul>
+
+    </nav>
+    <section id="main-content">
+
+        <h1><font size="75">Toy Department</font></h1>
+
+        <table class="center">
+            <tr class="odd">
+                <td class="RowName"></td>
+                @foreach (Product product in Model)
+                {
+                       <td><img src="~/Content/images/@product.ImageName" /></td> 
+                }
+            </tr>
+            <tr class="odd">
+                    <td class="RowName"></td>
+                    @foreach (Product product in Model)
+                    {
+                        if(product.IsTopSeller)
+                        {
+                        <td>BEST SELLER!</td>
+                        }
+                    }
+          </tr>
+
+                <tr class="even">
+                    <td class="RowName">Name</td>
+                    @foreach (Product product in Model)
+                    {
+                        <td>
+                            @product.Name
+                        </td>}
+                </tr>
+
+                <tr class="odd">
+                    <td class="RowName">Rating</td>
+                    @foreach (Product product in Model)
+                    {
+                        if (product.AverageRating < 2)
+                        {
+                            <td><img src="~/Content/images/1-star.png" class="star1"/></td>
+}
+                        if (product.AverageRating >= 2 && product.AverageRating < 3)
+                        {
+                            <td><img src="~/Content/images/2-star.png" class="star1"/></td> }
+                        if (product.AverageRating >= 3 && product.AverageRating < 4)
+                        {
+                            <td><img src="~/Content/images/3-star.png" class="star1"/></td>
+}
+                        if (product.AverageRating >= 4 && product.AverageRating < 5)
+                        {
+                            <td><img src="~/Content/images/4-star.png" class="star1" /></td>
+}
+                        if (product.AverageRating == 5)
+                        {
+                            <td><img src="~/Content/images/5-star.png" class="star1" /></td>
+}
+                    }
+                </tr>
+                <tr class="even">
+                    <td class="RowName">Mfr</td>
+                    @foreach (Product product in Model)
+                    {
+                        <td>
+                            @product.Manufacturer
+                        </td>}
+                </tr>
+
+                <tr class="odd">
+                    <td class="RowName">Price</td>
+                    @foreach (Product product in Model)
+                    {
+                        <td>
+                            $@product.Price
+                        </td>}
+                </tr>
+                <tr class="even">
+                    <td class="RowName">Wt.(inlbs)</td>
+                    @foreach (Product product in Model)
+                    {
+                        <td>
+                            @product.WeightIbLbs
+                        </td>
+                    }
+                </tr>
+            </table>
+
+
+
+    </section>
+</body>
+</html>
+

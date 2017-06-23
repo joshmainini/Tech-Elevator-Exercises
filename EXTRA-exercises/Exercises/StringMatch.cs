@@ -24,9 +24,9 @@ namespace Exercises
 
 			if ((a.Length > b.Length) && (a.Length > 2))
 			{
-				for (int i = 0; i < b.Length-1; i++)
+				for (int i = 0; i < a.Length-2; i++)
 				{
-					if (b.Contains(a.Substring(i, i + 1)))
+					if (b.Contains(a.Substring(i, i + 2)))
 					{
 						count++;
 					}
@@ -34,9 +34,9 @@ namespace Exercises
 			}
 			else if((b.Length > a.Length) && (b.Length > 2))
 			{
-				for (int i = 0; i < a.Length-1; i++)
+				for (int i = 0; i < b.Length-2; i++)
 				{
-					if (a.Contains(b.Substring(i, i + 1)))
+					if (a.Contains(b.Substring(i, i + 2)))
 					{
 						count++;
 					}
