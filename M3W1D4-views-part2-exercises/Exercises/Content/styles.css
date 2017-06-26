@@ -28,6 +28,9 @@ nav {
         float: left;
     }
 
+        nav ul a {
+        }
+
     nav li {
         list-style-type: none;
         color: white;
@@ -171,7 +174,7 @@ detailDiv{
   
     
 }
-.detailImg{
+div.imgDiv img{
    
     max-height: none;
     max-width: none;
