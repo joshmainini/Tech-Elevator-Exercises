@@ -58,11 +58,14 @@ section {
     background-color: #FFF;
     border-radius: 7px;
 }
-
+tableDiv{
+    width: 100%;
+}
 table {
     border-collapse: collapse;
     align-content: center;
     margin: auto;
+    width: 95%;
 }
 
     table td {
@@ -98,7 +101,13 @@ img {
     max-height: 100px;
     max-width: 100px;
 }
+.listContainer{
+    text-align: center;
+    width: 95%;
+}
+.listDiv{
 
+}
 .toy {
     position: relative;
     right: 500px;
@@ -114,6 +123,9 @@ img {
     right: 285px;
     bottom: 90px;
 }
+.weight1{
+    font-size: 10px;
+}
 
 .price {
     position: relative;
@@ -127,20 +139,45 @@ img {
     right: 285px;
     bottom: 100px;
 }
+.mfr1{
+    font-size:10px;
+}
 
 .name {
     position: relative;
     right: 285px;
     bottom: 100px;
 }
-.name1{
 
-}
-
-div {
-    border-bottom: 2px solid grey;
-}
 .tile{
     display:inline-block;
     border-bottom: 2px solid white;
+}
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 2px;
+}
+.parentDiv{
+    text-align:left;
+    width: 95%;
+}
+detailDiv{
+    display: inline-block;
+  
+    
+}
+.detailImg{
+   
+    max-height: none;
+    max-width: none;
+}
+.imgDiv {
+    display: inline-block;
+
+  
 }

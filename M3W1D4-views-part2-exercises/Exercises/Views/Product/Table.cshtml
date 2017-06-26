@@ -1,44 +1,25 @@
-﻿@{
-    Layout = null;
-}
-
-@using Exercises.Models;
+﻿@using Exercises.Models;
 
 @model List<Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <link rel="stylesheet" href="~/Content/styles.css" />
-</head>
-<body>
-    <header>
-        <h1>ASP.NET MVC Exercises - Views Part 2: Models</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-        </ul>
-
-    </nav>
-    <section id="main-content">
 
         <h1><font size="75">Toy Department</font></h1>
+<div class="tableDiv">
 
         <table class="center">
             <tr class="odd">
                 <td class="RowName"></td>
                 @foreach (Product product in Model)
                 {
-                       <td><img src="~/Content/images/@product.ImageName" /></td> 
-                }
-            </tr>
+                    <td><a href="/Product/Detail/@product.ProductId">
+                       <img src="~/Content/images/@product.ImageName" />
+                    </a></td>
+                    }
+</tr>
             <tr class="odd">
                     <td class="RowName"></td>
                     @foreach (Product product in Model)
@@ -66,22 +47,22 @@
                         if (product.AverageRating < 2)
                         {
                             <td><img src="~/Content/images/1-star.png" class="star1"/></td>
-}
+                        }
                         if (product.AverageRating >= 2 && product.AverageRating < 3)
                         {
                             <td><img src="~/Content/images/2-star.png" class="star1"/></td> }
                         if (product.AverageRating >= 3 && product.AverageRating < 4)
                         {
                             <td><img src="~/Content/images/3-star.png" class="star1"/></td>
-}
+                        }
                         if (product.AverageRating >= 4 && product.AverageRating < 5)
                         {
                             <td><img src="~/Content/images/4-star.png" class="star1" /></td>
-}
+                        }
                         if (product.AverageRating == 5)
                         {
                             <td><img src="~/Content/images/5-star.png" class="star1" /></td>
-}
+                        }
                     }
                 </tr>
                 <tr class="even">
@@ -90,7 +71,8 @@
                     {
                         <td>
                             @product.Manufacturer
-                        </td>}
+                        </td>
+                    }
                 </tr>
 
                 <tr class="odd">
@@ -99,7 +81,8 @@
                     {
                         <td>
                             $@product.Price
-                        </td>}
+                        </td>
+                    }
                 </tr>
                 <tr class="even">
                     <td class="RowName">Wt.(inlbs)</td>
@@ -111,10 +94,9 @@
                     }
                 </tr>
             </table>
+</div>
 
 
 
-    </section>
-</body>
-</html>
+
 

@@ -1,0 +1,45 @@
+﻿@using Exercises.Models;
+
+@model Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="parentDiv">
+    <div class="imgDiv">
+        <img src="~/Content/images/@Model.ImageName" class="detailImg"/>
+    </div>
+    <div class="detailDiv">
+        @if (Model.IsTopSeller)
+        {
+            <h5>@Model.Name <font color="red">BEST SELLER!</font></h5>
+        }
+        else
+        {
+            <h5>@Model.Name</h5>
+        }
+        <p>by @Model.Manufacturer</p>
+        @if (Model.AverageRating < 2)
+        {
+            <img src="~/Content/images/1-star.png" class="star1" />
+        }
+        @if (Model.AverageRating >= 2 && Model.AverageRating < 3)
+        {
+            <img src="~/Content/images/2-star.png" class="star1" />
+        }
+        @if (Model.AverageRating >= 3 && Model.AverageRating < 4)
+        {
+            <img src="~/Content/images/3-star.png" class="star1" />
+        }
+        @if (Model.AverageRating >= 4 && Model.AverageRating < 5)
+        {
+            <img src="~/Content/images/4-star.png" class="star1" />
+        }
+        @if (Model.AverageRating == 5)
+        {
+            <img src="~/Content/images/5-star.png" class="star1" />
+        }
+        <p><strong>Weight</strong> @Model.WeightIbLbs lbs</p>
+        <p><strong>Description:</strong>@Model.Description</p>
+    </div>
+</div>
