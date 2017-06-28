@@ -1,0 +1,24 @@
+﻿@using Exercises.Web.Models;
+@model ColorizedNameModel
+@{
+    ViewBag.Title = "Colorized Name Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Colorized Name</h2>
+
+<p>First Name: @Model.FirstName</p>
+<p>Last Name: @Model.LastName</p>
+<br/>
+@if(Model.Blue)
+{
+    <p style="color: blue;">@Model.FirstName @Model.LastName</p>
+}
+@if (Model.Red)
+{
+    <p style="color: red;">@Model.FirstName @Model.LastName</p>
+}
+@if (Model.Green)
+{
+    <p style="color: green;">@Model.FirstName @Model.LastName</p>
+}

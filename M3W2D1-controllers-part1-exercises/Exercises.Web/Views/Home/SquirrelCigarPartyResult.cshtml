@@ -1,0 +1,17 @@
+﻿@using Exercises.Web.Models;
+@model SquirrelCigarPartyModel
+@{
+    ViewBag.Title = "Squirrel Cigar Party";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if(Model.SuccessfulParty())
+{
+    <h2>Great Party!!!!</h2>
+    <img src="~/Content/happy-squirrel.png"/>
+}
+else
+{
+    <h2>Ugh...</h2>
+    <img src="~/Content/sad-squirrel.png"/>
+}
