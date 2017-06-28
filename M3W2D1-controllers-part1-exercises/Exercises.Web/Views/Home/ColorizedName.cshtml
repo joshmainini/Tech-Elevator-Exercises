@@ -18,9 +18,9 @@
         @Html.TextBoxFor(m => m.LastName)
     </div>
     <div>
-        @Html.CheckBox(Model => Model.Blue,"Blue") Blue
-        @Html.CheckBox(Model => Model.Red, "Red") Red
-        @Html.CheckBox(Model => Model.Green, "Green")  Green      
+        @Html.CheckBoxFor(m => m.Blue) Blue
+        @Html.CheckBoxFor(m => m.Red) Red
+        @Html.CheckBoxFor(m => m.Green) Green      
     </div>
     <button>Submit</button>
 

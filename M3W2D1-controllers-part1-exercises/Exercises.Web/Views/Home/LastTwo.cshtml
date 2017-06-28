@@ -1,0 +1,53 @@
+﻿@using Exercises.Web.Models;
+@model LastTwoModel
+@{
+    ViewBag.Title = "Last Two";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Reversed Last Two Characters</h2>
+
+@using (Html.BeginForm("LastTwoResult", "Home", FormMethod.Get))
+{
+    <div>
+        @Html.Label("word1", "Word 1:")
+        @Html.TextBoxFor(m => m.word1)
+    </div>
+    <div>
+        @Html.Label("word2", "Word 2:")
+        @Html.TextBoxFor(m => m.word2)
+    </div>
+    <div>
+        @Html.Label("word3", "Word 3:")
+        @Html.TextBoxFor(m => m.word3)
+    </div>
+    <div>
+        @Html.Label("word4", "Word 4:")
+        @Html.TextBoxFor(m => m.word4)
+    </div>
+    <div>
+        @Html.Label("word5", "Word 5:")
+        @Html.TextBoxFor(m => m.word5)
+    </div>
+    <div>
+        @Html.Label("word6", "Word 6:")
+        @Html.TextBoxFor(m => m.word6)
+    </div>
+    <div>
+        @Html.Label("word7", "Word 7:")
+        @Html.TextBoxFor(m => m.word7)
+    </div>
+    <div>
+        @Html.Label("word8", "Word 8:")
+        @Html.TextBoxFor(m => m.word8)
+    </div>
+    <div>
+        @Html.Label("word9", "Word 9:")
+        @Html.TextBoxFor(m => m.word9)
+    </div>
+    <div>
+        @Html.Label("word10", "Word 10:")
+        @Html.TextBoxFor(m => m.word10)
+    </div>
+    <button>Submit</button>
+}
