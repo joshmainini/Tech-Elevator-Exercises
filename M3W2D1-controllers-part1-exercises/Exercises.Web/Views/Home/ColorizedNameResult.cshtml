@@ -10,15 +10,15 @@
 <p>First Name: @Model.FirstName</p>
 <p>Last Name: @Model.LastName</p>
 <br/>
-@if(Model.Blue)
+@if(Model.Blue == "Blue")
 {
-    <p style="color: blue;">@Model.FirstName @Model.LastName</p>
+    <p style="color: blue;">@Model.FirstName + @Model.LastName</p>
 }
-@if (Model.Red)
+@if (Model.Red == "Red")
 {
-    <p style="color: red;">@Model.FirstName @Model.LastName</p>
+    <p style="color: red;">@Model.FirstName + @Model.LastName</p>
 }
-@if (Model.Green)
+@if (Model.Green == "Green")
 {
-    <p style="color: green;">@Model.FirstName @Model.LastName</p>
+    <p style="color: green;">@Model.FirstName + @Model.LastName</p>
 }

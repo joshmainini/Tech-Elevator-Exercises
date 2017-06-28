@@ -9,8 +9,8 @@ namespace Exercises.Web.Models
 	{
 		public string FirstName {get; set;}
 		public string LastName { get; set; }
-		public bool Green { get; set; }
-		public bool Blue { get; set; }
-		public bool Red { get; set; }
+		public string Green { get; set; }
+		public string Blue { get; set; }
+		public string Red { get; set; }
 	}
 }

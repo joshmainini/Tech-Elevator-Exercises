@@ -30,37 +30,5 @@ namespace Exercises.Web.Controllers
 		{
 			return View("ColorizedNameResult",colorizedModel);
 		}
-		public ActionResult FizzBuzz()
-		{
-			return View("FizzBuzz");
-		}
-		public ActionResult FizzBuzzResult(FizzBuzzModel fizzModel)
-		{
-			return View("FizzBuzzResult", fizzModel);
-		}
-		public ActionResult LastTwo()
-		{
-			return View("LastTwo");
-		}
-		public ActionResult LastTwoResult(LastTwoModel model)
-		{
-			return View("LastTwoResult", model);
-		}
-		public ActionResult BabyLotto()
-		{
-			return View("BabyLotto");
-		}
-		public ActionResult BabyLottoResult(BabyLottoModel model)
-		{
-			return View("BabyLottoResult", model);
-		}
-		public ActionResult SquirrelCigarParty()
-		{
-			return View("SquirrelCigarParty");
-		}
-		public ActionResult SquirrelCigarPartyResult(SquirrelCigarPartyModel model)
-		{
-			return View("SquirrelCigarPartyResult",model);
-		}
     }
 }
