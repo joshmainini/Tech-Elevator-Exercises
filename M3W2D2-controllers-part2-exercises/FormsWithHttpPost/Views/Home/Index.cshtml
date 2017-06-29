@@ -1,0 +1,77 @@
+﻿@using FormsWithHttpPost.DAL;
+@using FormsWithHttpPost.Models;
+@model Review
+@{
+    ViewBag.Title = "Squirrel Review";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    string connectionString = @"Data Source = localhost\sqlexpress; Initial Catalog = ProductReview; Integrated Security = True";
+
+    ReviewSqlDAL dal = new ReviewSqlDAL(connectionString);
+    List<Review> result = dal.GetAllReviews();
+}
+
+<div>
+    <img src="~/Content/forDummies.png"/>
+    <h2>Past Reviews</h2>
+</div>
+@for (int i = 0; i < result.Count; i++)
+{
+    if (i % 2 == 0)
+    {
+        <div style="background-color: lightgrey;">
+            <p style="font-weight: bold; display: inline-block">@result[i].Title</p>
+            @if(result[i].Rating == 1)
+            {
+            <img src="~/Content/star.png" style=" display:inline-block;" />
+            }
+            else if (result[i].Rating == 2)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            else if (result[i].Rating == 3)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            else if (result[i].Rating == 4)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            else if (result[i].Rating == 5)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            <p>by @result[i].Username on @result[i].ReviewDate</p>
+            <p>@result[i].Message</p>
+        </div>
+    }
+    else
+    {
+        <div>
+            <p style="font-weight: bold; display: inline-block">@result[i].Title</p>
+            @if(result[i].Rating == 1)
+            {
+            <img src="~/Content/star.png" style=" display:inline-block;" />
+            }
+            else if (result[i].Rating == 2)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            else if (result[i].Rating == 3)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            else if (result[i].Rating == 4)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            else if (result[i].Rating == 5)
+            {
+            <img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" /><img src="~/Content/star.png" style="display:inline-block;" />
+            }
+            <p>by @result[i].Username on @result[i].ReviewDate</p>
+            <p>@result[i].Message</p>
+        </div>
+    }
+}
