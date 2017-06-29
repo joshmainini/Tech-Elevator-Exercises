@@ -16,7 +16,21 @@ namespace Exercises
         */
         public bool StringE(string str)
         {
-            return false;
+			bool result = false;
+			int count = 0;
+
+			for (int i = 0; i < str.Length; i++)
+			{
+				if (str[i] == 'e')
+				{
+					count++;
+				}
+			}
+			if ((count > 0) && (count < 4))
+			{
+				result = true;
+			}
+			return result;
         }
     }
 }

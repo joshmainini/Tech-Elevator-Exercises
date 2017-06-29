@@ -24,19 +24,19 @@ namespace Exercises
 
 			if ((a.Length > b.Length) && (a.Length > 2))
 			{
-				for (int i = 0; i < a.Length-2; i++)
+				for (int i = 0; i < b.Length-1; i++)
 				{
-					if (b.Contains(a.Substring(i, i + 2)))
+					if (b.Substring(i,2) == a.Substring(i, 2))
 					{
 						count++;
 					}
 				}
 			}
-			else if((b.Length > a.Length) && (b.Length > 2))
+			else
 			{
-				for (int i = 0; i < b.Length-2; i++)
+				for (int i = 0; i < a.Length-1; i++)
 				{
-					if (a.Contains(b.Substring(i, i + 2)))
+					if (a.Substring(i, 2) == b.Substring(i,2))
 					{
 						count++;
 					}
