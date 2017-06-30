@@ -20,6 +20,10 @@ namespace Exercises
         */
         public string RepeatSeparator(string word, string sep, int count)
         {
+			for (int i = 0; i < count; i++)
+			{
+
+			}
             return null;
         }
     }
