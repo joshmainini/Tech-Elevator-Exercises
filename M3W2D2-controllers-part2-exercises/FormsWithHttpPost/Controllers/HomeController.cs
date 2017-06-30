@@ -13,7 +13,7 @@ namespace FormsWithHttpPost.Controllers
 {
     public class HomeController : Controller
     {
-		string connectionString = WebConfigurationManager.ConnectionStrings["ProductReview"].ToString();
+		string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=productreview; Integrated Security = True";
 
 		// GET: Home
 		public ActionResult Index()

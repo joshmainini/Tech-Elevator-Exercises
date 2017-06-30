@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FormsWithHttpPost.Models;
+using FormsWithHttpPost.DAL;
+using System.Web.Mvc;
 
 namespace FormsWithHttpPost.Controllers.Tests
 {
@@ -14,7 +17,24 @@ namespace FormsWithHttpPost.Controllers.Tests
         [TestMethod()]
         public void IndexTest()
         {
-            Assert.Fail();
+			HomeController controller = new HomeController();
+
+			ViewResult result = controller.Index() as ViewResult;
+
+			Assert.IsNotNull(result);
+			Assert.AreEqual("Index", result.ViewName);
         }
-    }
+		[TestMethod()]
+		public void NextReview_ReturnsCorrectView()
+		{
+		
+			HomeController controller = new HomeController();
+
+			ViewResult result = controller.NextReview() as ViewResult;
+
+			
+			Assert.IsNotNull(result);
+			Assert.AreEqual("NextReview", result.ViewName);
+		}
+	}
 }
