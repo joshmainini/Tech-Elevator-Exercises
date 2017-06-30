@@ -10,7 +10,6 @@ namespace FormsWithHttpPost.DAL
     public class ReviewSqlDAL : IReviewDAL
     {
 
-
         public List<Review> GetAllReviews()
         {
             throw new NotImplementedException();
