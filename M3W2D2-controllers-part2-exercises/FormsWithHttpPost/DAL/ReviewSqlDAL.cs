@@ -12,11 +12,14 @@ namespace FormsWithHttpPost.DAL
     {
 		private string connectionString;
 
+<<<<<<< HEAD
 		public ReviewSqlDAL(string connectionString)
 		{
 			this.connectionString = connectionString;
 		}
 
+=======
+>>>>>>> c8b79fb4b44343271f33227a74600cc1b52cbc6c
         public List<Review> GetAllReviews()
         {
 			List<Review> output = new List<Review>();
