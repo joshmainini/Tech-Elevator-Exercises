@@ -1,29 +1,20 @@
 # Client-Side Scripting Exercises
 
-For each exercise, create separate html and javascript file. You'll write your javascript file to have a function that matches the signature below
-and be responsible for calling and implementing it.
+For each exercise, create the function and implement it inside of `exercises.js`. The unit tests defined in `tests.js` will look for these functions and call them using the signature shown below.
 
+## Exercises
 
 1. **SumDouble** Given two int values, return their sum. Unless the two values are the same, then return double their sum.
 
 		sumDouble(1, 2) → 3
 		sumDouble(3, 2) → 5
 		sumDouble(2, 2) → 8
-		
-		
-		window.onload = function() { 
-			
-			console.log(sumDouble(1, 2));
-			console.log(sumDouble(3, 2));
-			console.log(sumDouble(2, 2));
-			
-			function sumDouble(x, y) {
-				// do logic here
-				// return result;
-				return x + y;
-			}
-		};
-		
+				
+		function sumDouble(x, y) {
+			// do logic here
+			// return result;
+			return x + y;
+		}				
 
 2. **HasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
 
@@ -90,31 +81,12 @@ and be responsible for calling and implementing it.
 
 13. **FizzBuzz** Because you know you can't live without it, FizzBuzz. 
 	
-		Based on a traditional English children's game.
-			Print the numbers 1..100
-			For multiples of 3, print "Fizz" instead of the number
-			For multiples of 5, print "Buzz" instead of the number
-			For multiples of 3 and 5, print "FizzBuzz" instead of the number
 		
-		fizzBuzz() → 	
-			1
-			2
-			Fizz
-			4
-			Buzz
-			Fizz
-			7
-			8
-			Fizz
-			Buzz
-			11
-			Fizz
-			13
-			14
-			FizzBuzz
-			.
-			.
-			.			
+		fizzBuzz(3) → "Fizz"
+		fizzBuzz(1) → 1
+		fizzBuzz(10) → "Buzz"
+		fizzBuzz(15) → "FizzBuzz"
+		fizzBuzz(8) → 8
 
 14. **CountValues** Write a function that accepts an array of integer values, count of the number of times each value is found in the array, and then display the values and their count.
 
@@ -140,3 +112,31 @@ and be responsible for calling and implementing it.
 		blackjack(21, 19) → 21
 		blackjack(19, 22) → 19
 		
+## Challenge Exercises
+
+1. **IQTest** Bob is preparing to pass an IQ test. The most frequent task in this test is to find out which one of the given numbers differs from the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he needs a program that among the given numbers finds one that is different in evenness, and return the position of this number. _Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)_
+
+
+		iqTest("2 4 7 8 10") → 3 //third number is odd, while the rest are even
+		iqTest("1 2 1 1") → 2 // second number is even, while the rest are odd
+		iqTest("") → 0 // there are no numbers in the given set
+		iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number
+
+2. **TitleCase** Write a function that will convert a string into title case, given an optional list of exceptions (minor words). The list of minor words will be given as a string with each word separated by a space. Your function should ignore the case of the minor words string -- it should behave in the same way even if the case of the minor word string is changed.
+
+
+* First argument (required): the original string to be converted.
+* Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first word in the string. The JavaScript tests will pass undefined when this argument is unused.
+
+
+		titleCase('a clash of KINGS', 'a an the of') // should return: 'A Clash of Kings'
+		titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
+		titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
+
+3. **PerfectSquare** Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer. If the parameter is itself not a perfect square, than -1 should be returned. You may assume the parameter is positive.
+
+
+		findNextSquare(121) → 144
+		findNextSquare(625) → 676
+		findNextSquare(114) → -1 // 114 is not a perfect square
+
