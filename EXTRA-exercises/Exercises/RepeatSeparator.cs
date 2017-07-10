@@ -20,11 +20,21 @@ namespace Exercises
         */
         public string RepeatSeparator(string word, string sep, int count)
         {
+			String newWord = "";
+
 			for (int i = 0; i < count; i++)
 			{
-
+				if (i < count - 1)
+				{
+					newWord += word + sep;
+				}
+				else
+				{
+					newWord += word;
+				}
 			}
-            return null;
-        }
-    }
+				return newWord;
+
+		}
+	}
 }
