@@ -1,4 +1,5 @@
-﻿function iqTest(array) {
+﻿function iqTest(string) {
+    var array = parseInt(string.split(","))
     var evenCount = 0;
     var oddCount = 0;
     for (var i = 0; i < array.length; i++) {
