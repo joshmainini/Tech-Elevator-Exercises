@@ -60,6 +60,6 @@ function endOfTheCenturyPresidents() {
 function currencyPresidents() {
     
     $("#btnAppearOnCurrency").click(function () {
-        $("h2:contains('1900s')").nextUntil("h2").nextAll(".currency").addClass("appearOnCurrency");
+        $("h2:contains('1900s')").nextUntil("h2", ".currency").addClass("appearOnCurrency");
     });
 }
