@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function sumDouble(number1, number2) {
     if (number1 == number2) {
         return (number1 + number2) * 2;
@@ -238,4 +239,15 @@ function blackJack(num1, num2) {
         result = num2;
     }
     return result;
+=======
+﻿function countValues(input) {
+    var count = {};
+    for (var i = 0; i < input.length; i++) {
+        if (isNaN(count[input[i]])) {
+            count[input[i]] = 0;
+        }
+        count[input[i]] += 1;
+    }
+    return count;
+>>>>>>> cf326e07c86f5646411603ab4086be47f7dab316
 }
