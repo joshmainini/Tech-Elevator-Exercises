@@ -1,4 +1,4 @@
-﻿function iqTest(string) {
+function iqTest(string) {
     var array = string.split(" ");
     var evenCount = 0;
     var oddCount = 0;

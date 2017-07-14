@@ -197,6 +197,7 @@
     <Content Include="Scripts\exercises\dom-exercises.js" />
     <Content Include="Scripts\exercises\event-exerises.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\exercises\game.js" />
     <Content Include="Scripts\exercises\websocket-exercises.js" />
     <Content Include="Scripts\jquery.signalR-2.2.1.js" />
     <Content Include="Scripts\jquery.signalR-2.2.1.min.js" />
