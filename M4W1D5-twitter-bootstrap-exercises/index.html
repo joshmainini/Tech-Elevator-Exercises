@@ -10,71 +10,94 @@
       <!--[if (lt IE 9) & (!IEMobile)]>
         <script src="js/vendor/respond.min.js"></script>
       <![endif]-->
+	  <link href="main.css" rel= "stylesheet"/>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     </head>
     <body>
       <header>
-        <img src="img/te_logo.png" alt="Tech Elevator" width="120">
-        <ul>
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#signup">Sign Up</a></li>
-        </ul>
-      </header>
-
-      <h1>Big Welcome Message</h1>
-      <p>Ingenious marketing copy. And some more ingenious marketing copy.<a href="#features">Learn more</a></p>
+	  <nav class="navbar navbar-default">
+		 <div class="container-fluid">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/te_logo.png" alt="Tech Elevator" width="120"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#Welcome">Home</a></li>
+        <li><a href="#Features">Features</a></li>
+        <li><a href="#Impact">Impact</a></li> 
+        <li><a href="#Signup">Signup</a></li> 
+      </ul>
+    </div>
+	</nav>
+    </header>
+		<div class="container">
+			<div class="row img">
+				<div class="col-md-6">
+					<h1 class="text">Big Welcome Message</h1>
+					<p class="text">Ingenious marketing copy. And some more ingenious marketing copy.</p>
+				</div>
+				<div class="col-md-6">
+					<button type="button" class="btn btn-primary"><a href="#features" class="btn-primary" >Learn more</a></button>
+				</div>
+			</div>
 
       <!-- FEATURES SECTION -->
       <section id="features">
-        <h1>Features</h1>
-        <h2>Feature 1</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 2</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 3</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-        <h2>Feature 4</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 5</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p>
-        <h2>Feature 6</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+    
+			<h2>Features</h2>
+			<div class="row">
+				<div class="col-md-4"><span class="glyphicon glyphicon-cloud" style="font-size: 50px;"></span> <h2>Feature 1</h2> <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p></div>
+				<div class="col-md-4"> <span class="glyphicon glyphicon-user" style="font-size: 50px;"></span> <h2>Feature 2</h2> <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p></div>
+				<div class="col-md-4"><span class="glyphicon glyphicon-envelope" style="font-size: 50px;"></span><h2>Feature 3</h2><p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p></div>	
+			</div>
+			<div class="row">
+				<div class="col-md-4"><span class="glyphicon glyphicon-leaf" style="font-size: 50px;"></span>  <h2>Feature 4</h2> <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p></div>
+				<div class="col-md-4"><span class="glyphicon glyphicon-open" style="font-size: 50px;"></span>  <h2>Feature 5</h2> <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo. </p></div>
+				<div class="col-md-4"><span class="glyphicon glyphicon-cutlery" style="font-size: 50px;"></span> <h2>Feature 6</h2><p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p></div>	
+			</div>
+        
       </section><!-- /.row -->
 
       <!-- IMPACT SECTION -->
-      <section id="impact">
+      <section id="impact">	
         <h1>Impact</h1>
-        <img src="img/photo_one.jpg" alt="Photo One">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
-        <img src="img/photo_two.jpg" alt="Photo Two">
-        <blockquote><p>Lorem ipsum dolor sit amet</p></blockquote>
-        <img src="img/photo_three.jpg" alt="Photo Three">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla</p></blockquote>
-        <img src="img/photo_four.jpg" alt="Photo Four">
-        <blockquote><p>Lorem ipsum dolor sit amet</p></blockquote>
-        <img src="img/photo_five.jpg" alt="Photo Five">
-        <blockquote ><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
-        <img src="img/photo_six.jpg" alt="Photo Six">
-        <blockquote><p>Lorem ipsum dolor sit amet elit.</p></blockquote>
-        <img src="img/photo_seven.jpg" alt="Photo Seven">
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote>
+		<div class="row">
+				<div class="col-md-4 elevate"><blockquote><p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote></div>
+				<div class="col-md-4 instruction"><blockquote><p class="text">Lorem ipsum dolor sit amet</p></blockquote></div>
+				<div class="col-md-4 laptop"><blockquote><p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla</p></blockquote></div>	
+			</div>
+			<div class="row">
+				<div class="col-md-4 pairprog"><blockquote><p class="text">Lorem ipsum dolor sit amet</p></blockquote></div>
+				<div class="col-md-4 office"><blockquote ><p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote></div>
+				<div class="col-md-4">
+					<div class="interview"><blockquote><p class="text">Lorem ipsum dolor sit amet elit.</p></blockquote></div>
+					<div class="whiteboard"><blockquote><p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod, nulla pretium commodo ultricies</p></blockquote></div>
+				</div>	
+			</div>       
       </section><!-- /#impact -->
 
       <!-- SIGNUP SECTION -->
       <section id="signup">
           <h1>Sign up now!</h1>
-            <table>
+		<div class="row">
+		 <div class="col-md-4">
+            <table class="table">
               <thead>
                 <tr>
-                  <th>
+                  <th class="signup-red" colspan="2">
                     <h2>Basic Plan</h2>
                     <div>$19</div>
                   </th>
                 </tr>
               </thead>
-              <tfoot>
-                <tr><td><a href="#">Sign up now!</a></td></tr>
+              <tfoot class="signup-red">
+                <tr><td colspan="2"><a href="#" class="btn btn-danger">Sign up now!</a></td></tr>
               </tfoot>
               <tbody>
                 <tr><td>Feature</td><td>Name</td></tr>
@@ -84,17 +107,19 @@
                 <tr><td>Feature</td><td>Name</td></tr>
               </tbody>
             </table>
-            <table>
+		</div>	
+		 <div class="col-md-4">
+            <table class="table">
               <thead>
                 <tr>
-                  <th>
+                  <th class="signup-blue" colspan="2">
                     <h2>Premium Plan</h2>
                     <div>$29</div>
                   </th>
                 </tr>
               </thead>
-              <tfoot>
-                <tr><td><a href="#">Sign up now!</a></td></tr>
+              <tfoot class="signup-blue">
+                <tr><td colspan="2"><a href="#" class="btn btn-primary">Sign up now!</a></td></tr>
               </tfoot>
               <tbody>
                 <tr><td>Feature</td><td>Name</td></tr>
@@ -104,17 +129,19 @@
                 <tr><td>Feature</td><td>Name</td></tr>
               </tbody>
             </table>
-            <table>
+		</div>
+		 <div class="col-md-4">
+            <table class="table">
               <thead>
                 <tr>
-                  <th>
+                  <th class="signup-green" colspan="2">
                     <h2>Pro Plan</h2>
                     <div>$39</div>
                   </th>
                 </tr>
               </thead>
-              <tfoot>
-                <tr><td><a href="#">Sign up now!</a></td></tr>
+              <tfoot class="signup-green">
+                <tr><td colspan="2"><a href="#" class="btn btn-success">Sign up now!</a></td></tr>
               </tfoot>
               <tbody>
                 <tr><td>Feature</td><td>Name</td></tr>
@@ -124,6 +151,8 @@
                 <tr><td>Feature</td><td>Name</td></tr>
               </tbody>
             </table>
+		</div>
+	</div>
       </section><!-- /#signup -->
 
 </body>

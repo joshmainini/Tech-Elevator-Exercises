@@ -11,6 +11,7 @@
                         $(".ship").removeClass();
                         alert("YOOOOOOOOU LOOOOOOOSEEEE!!");
                         $(".ship").removeClass();
+
                         $("#row_0 #row_0_column_0").addClass("ship");
                     }
                     if ($(".ship").hasClass("treasure")) {

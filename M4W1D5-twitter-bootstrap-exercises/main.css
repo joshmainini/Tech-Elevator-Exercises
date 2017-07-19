@@ -1,0 +1,116 @@
+.img{
+	background: url("img/te_present_1600x1060.jpg");
+	height: 350px;
+}
+.text{
+	color: white;
+}
+.elevate{
+	background: url("img/photo_one.jpg");
+	background-size: contain;
+	height: 540px;
+	width: 360px;
+}
+
+	.elevate img{
+		width: 100%;
+		height: 100%;
+	}
+.instruction{
+	background: url("img/photo_two.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 225px;
+	width: 150px;
+	position: relative;
+		left: 25px;
+}
+
+	.instruction img{
+		width: 100%;
+		height: 100%;
+	}	
+
+.laptop{
+	background: url("img/photo_three.jpg");
+	background-size: contain;
+	height: 540px;
+	width: 360px;
+}
+
+	.laptop img{
+		width: 100%;
+		height: 100%;
+	}	
+.pairprog{
+	background: url("img/photo_four.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 225px;
+	width: 425px;
+	position: relative;
+		top: 15px;
+}
+
+	.pairprog img{
+		width: 100%;
+		height: 100%;
+	}	
+.office{
+	background: url("img/photo_five.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 540px;
+	width: 323px;
+	position: relative;
+		left: 10px;
+}
+
+	.office img{
+		width: 100%;
+		height: 100%;
+	}
+.whiteboard{
+	background: url("img/photo_seven.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 323px;
+	position: relative;
+		top: 25px;
+		left: 30px;
+	
+}
+.interview{
+	background: url("img/photo_six.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 323px;
+	position: relative;
+		top: 25px;
+		left: 30px;
+}	
+.signup-red{
+	background-color: red;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+.signup-blue{
+	background-color: blue;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+.signup-green{
+	background-color: green;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+
+
+
+	
+
