@@ -15,7 +15,7 @@ $(document).ready(function () {
     $("input[name='ShippingType']").click(function () {
         var cost = $(this).data('cost');
         $("#shipping .price").text(cost);
-        var total = grandTotal($(this).data('cost'), $("#subtotal .price").text());
+        var total = grandTotal($(this).data('cost'), $("#subtotal .price").text(), $("#tax .price").text());
         $("#grandtotal .price").text(total);
 
     });
@@ -25,14 +25,16 @@ $(document).ready(function () {
     });
 
    
-    function grandTotal(shipping, subtotal) {
+    function grandTotal(shipping, subtotal, tax) {
         var resultShip = shipping.substr(1);
         var resultSub = subtotal.substr(1);
+        var resultTax = tax.substr(1);
 
         var newShip = parseFloat(resultShip);
         var newSub = parseFloat(resultSub);
+        var newTax = parseFloat(resultTax);
 
-        var result = newShip + newSub
+        var result = newShip + newSub + newTax;
 
         return "$" + result.toFixed(2);
     };

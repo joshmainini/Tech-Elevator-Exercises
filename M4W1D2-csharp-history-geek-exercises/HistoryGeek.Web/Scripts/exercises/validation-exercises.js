@@ -7,7 +7,7 @@ $(document).ready(function () {
     // Objects in javascript use { .. } notation and are the same as key / value pairs
     $("#form0").validate({
 
-        debug: true,
+        debug: false,
         rules: {
             EmailAddress: {
                 required: true, 
