@@ -26,3 +26,8 @@ Day 1
 
 Day 2
 
+1. Implement client side validation for password strength rules - Implement multiple different custom validators, one for each rule rather than one big validator for all. This makes it easier to give the user targeted feedback about what exactly is wrong with their password. Implement server-side validation of password strength that mimics the client-side validation
+
+
+2. Exercise Prevent Session Fixation - Demonstrate how a session fixation attack could be executed. Fix vulnerability by creating a new session after successful login. Demonstrate that the session fixation vulnerability no longer exists
+
