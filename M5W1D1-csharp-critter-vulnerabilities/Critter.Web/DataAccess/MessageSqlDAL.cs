@@ -66,14 +66,15 @@ namespace Critter.Web.DataAccess
         {
             try
             {
-                string sql = $"DELETE FROM message WHERE message_id = " + messageId;
+				string sql = $"DELETE FROM message WHERE message_id = @messageId";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    int result = cmd.ExecuteNonQuery();                    
+					cmd.Parameters.AddWithValue("@messageId", messageId);
+					int result = cmd.ExecuteNonQuery();                    
                 }
 
             }
@@ -89,14 +90,15 @@ namespace Critter.Web.DataAccess
 
             try
             {
-                string sql = $"SELECT * FROM message WHERE sender_name = '{username}' ORDER BY create_date DESC";
+                string sql = $"SELECT * FROM message WHERE sender_name = @username ORDER BY create_date DESC";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@username", username);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -119,14 +121,16 @@ namespace Critter.Web.DataAccess
             try
             {
                 // We use a UNION query to bring together the results of two different queries.
-                string sql = $"SELECT DISTINCT(receiver_name) FROM message WHERE sender_name = '{forUser}' AND private = 1 AND create_date > '{sinceDate.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff")}' UNION SELECT DISTINCT(sender_name) FROM message WHERE receiver_name = '{forUser}' AND private = 1 AND create_date > '{sinceDate.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff")}'";
+                string sql = $"SELECT DISTINCT(receiver_name) FROM message WHERE sender_name = @forUser AND private = 1 AND create_date > @sinceDate UNION SELECT DISTINCT(sender_name) FROM message WHERE receiver_name = @forUser AND private = 1 AND create_date > @sinceDate";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@forUser", forUser);
+					cmd.Parameters.AddWithValue("@sinceDate", sinceDate);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -163,14 +167,15 @@ namespace Critter.Web.DataAccess
             try
             {
                 // We use a UNION query to bring together the results of two different queries.
-                string sql = $"SELECT DISTINCT(receiver_name) FROM message WHERE sender_name = '{forUser}' AND private = 1 UNION SELECT DISTINCT(sender_name) FROM message WHERE receiver_name = '{forUser}' AND private = 1";
+                string sql = $"SELECT DISTINCT(receiver_name) FROM message WHERE sender_name = @forUser AND private = 1 UNION SELECT DISTINCT(sender_name) FROM message WHERE receiver_name = @forUser AND private = 1";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@forUser", forUser);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -255,10 +260,13 @@ namespace Critter.Web.DataAccess
         {
             List<Message> output = new List<Message>();
 
-            string sql = $"SELECT * FROM message WHERE ((sender_name = '{forUser}' and receiver_name = '{withUser}') OR (sender_name = '{withUser}' and receiver_name = '{forUser}')) AND create_date > '{sinceDate.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff")}' ORDER BY create_date DESC";
+            string sql = $"SELECT * FROM message WHERE ((sender_name = @forUser and receiver_name = @withUser) OR (sender_name = @withUser and receiver_name = @forUser)) AND create_date > @sinceDate; ORDER BY create_date DESC";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
+			cmd.Parameters.AddWithValue("@forUser", forUser);
+			cmd.Parameters.AddWithValue("@withUser", withUser);
+			cmd.Parameters.AddWithValue("@sinceDate", sinceDate);
+			SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
@@ -272,10 +280,12 @@ namespace Critter.Web.DataAccess
         {
             List<Message> output = new List<Message>();
 
-            string sql = $"SELECT * FROM message WHERE (sender_name = '{forUser}' and receiver_name = '{withUser}') OR (sender_name = '{withUser}' and receiver_name = '{forUser}') ORDER BY create_date DESC";
+            string sql = $"SELECT * FROM message WHERE (sender_name = @forUser and receiver_name = @withUser) OR (sender_name = @withUser and receiver_name = @forUser) ORDER BY create_date DESC";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
+			cmd.Parameters.AddWithValue("@forUser", forUser);
+			cmd.Parameters.AddWithValue("@withUser", withUser);
+			SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
@@ -294,14 +304,15 @@ namespace Critter.Web.DataAccess
 
             try
             {
-                string sql = "SELECT TOP 1 * FROM message WHERE message_id = " + messageId;
+                string sql = "SELECT TOP 1 * FROM message WHERE message_id = @messageId";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@messageId", messageId);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -326,14 +337,15 @@ namespace Critter.Web.DataAccess
 
             try
             {
-                string sql = $"SELECT * FROM message WHERE receiver_name = '{username}' ORDER BY create_date DESC";
+                string sql = $"SELECT * FROM message WHERE receiver_name = @userName ORDER BY create_date DESC";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@userName", username);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -356,14 +368,15 @@ namespace Critter.Web.DataAccess
 
             try
             {
-                string sql = $"SELECT * FROM message WHERE private=0 AND create_date > '{sinceDate.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff")}' ORDER BY create_date DESC";
+                string sql = $"SELECT * FROM message WHERE private=0 AND create_date > @sinceDate ORDER BY create_date DESC";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@sinceDate", sinceDate);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -387,16 +400,17 @@ namespace Critter.Web.DataAccess
         {
             List<Message> output = new List<Message>();
 
-            try
+            try 
             {
-                string sql = $"SELECT TOP {numberOfMessagesToLimit} * FROM message WHERE private=0 ORDER BY create_date DESC";
+                string sql = $"SELECT TOP (@numberOfMessagesToLimit) * FROM message WHERE private=0 ORDER BY create_date DESC";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@numberOfMessagesToLimit", numberOfMessagesToLimit);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -424,11 +438,11 @@ namespace Critter.Web.DataAccess
                 string sql;
                 if (sinceDate == DateTime.MinValue)
                 {
-                    sql = $"SELECT * FROM message WHERE sender_name = '{username}' AND private = 0 ORDER BY create_date DESC";
+                    sql = $"SELECT * FROM message WHERE sender_name = @userName AND private = 0 ORDER BY create_date DESC";
                 }
                 else
                 {
-                    sql = $"SELECT * FROM message WHERE sender_name = '{username}' AND create_date > '{sinceDate.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss.fff")}' AND private = 0 ORDER BY create_date DESC";
+                    sql = $"SELECT * FROM message WHERE sender_name = @userName AND create_date > @sinceDate AND private = 0 ORDER BY create_date DESC";
                 }
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
@@ -436,7 +450,9 @@ namespace Critter.Web.DataAccess
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@userName", username);
+					cmd.Parameters.AddWithValue("@sinceDate", sinceDate);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
@@ -461,14 +477,15 @@ namespace Critter.Web.DataAccess
 
             try
             {
-                string sql = $"SELECT * FROM message WHERE message_text LIKE '%{messageText}%' AND private = 0 ORDER BY create_date DESC";
+                string sql = $"SELECT * FROM message WHERE message_text LIKE @messageText AND private = 0 ORDER BY create_date DESC";
 
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
                     conn.Open();
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@messageText", messageText);
+					SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
