@@ -15,3 +15,14 @@ squeaks between two critters as well as public squeaks where you can voice your 
 
 
 ![Critter](critter-image.jpg)
+
+## Assignments
+
+Day 1
+
+1. SQL Injection - change SQL commands to use parameterized queries to prevent injection attacks
+
+2. Remove any instances of the helper object "Html.Raw" which would allow text displayed to be rendered as HTML rather  that rendered as text.
+
+Day 2
+
