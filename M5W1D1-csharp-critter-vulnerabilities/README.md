@@ -31,3 +31,16 @@ Day 2
 
 2. Exercise Prevent Session Fixation - Demonstrate how a session fixation attack could be executed. Fix vulnerability by creating a new session after successful login. Demonstrate that the session fixation vulnerability no longer exists
 
+Day 3
+
+
+1. Demonstrate that Critter does not enforce access control checks
+
+2. Implement a system that checks to make sure that the current user id in session matches the user id in the URL. This should be done using some kind of consistent method like a filter
+
+3. If an a user attempts to do something they're not authorized for, they get a 403 error. If an unauthenticated user attempts to do something they're not authorized for, they get redirected to the login page. This is to accomodate someone who's session expired and then clicked on a link or button.
+
+4. After authenticating, the user is redirected back to the resource of their original request. This should be implemented by passing a query string parameter to the login page in order to set up an insecure redirect
+
+5. Build "delete message" function - Build functionality to delete a message and do it with access control
+Review solution with them to make sure that they are accounting for a user's access to a particular message
