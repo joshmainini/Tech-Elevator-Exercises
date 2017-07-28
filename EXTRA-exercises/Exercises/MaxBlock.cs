@@ -19,36 +19,64 @@ namespace Exercises
         */
         public int MaxBlock(string str)
         {
-			List<int> intList = new List<int>();
+			Dictionary<char, int> resultDictionary = new Dictionary<char, int>();
+			List<int> resultList = new List<int>();
 			int count = 1;
-			int resultCount = 0;
+			int result = 0;
 
-			for (int i = 0; i < str.Length; i++)
+			for (int i = 0; i < str.Length-1; i++)
 			{
-				int x = 0;
-
-				while (x < str.Length)
+				int x = 1;
+				if (str[i] == str[i + 1])
 				{
-					if (str[i] == str[i++])
+					if ((i + 1) != (str.Length - 1))
 					{
-						count++;
+						bool flag = true;
 
-						if (count > resultCount)
+						while ((str[i] == str[i + x]) && flag)
 						{
-							resultCount = count;
+							count++;
+							if (i + x != str.Length - 1)
+							{
+								x++;
+							}
+							else
+							{
+								flag = false;
+							}
 						}
 					}
-					else if (str[i] != str[i++])
+					else
 					{
-						count = 1;
+						count++;
 					}
-					x++;
+					if (!resultDictionary.ContainsKey(str[i]))
+					{
+						resultDictionary.Add(str[i], count);
+					}
+					else if (resultDictionary.ContainsKey(str[i]) && (count > resultDictionary[str[i]]))
+					{
+						resultDictionary.Remove(str[i]);
+						resultDictionary.Add(str[i], count);
+					}
 				}
-				intList.Add(resultCount);
+				count = 1;
 			}
-			intList.Reverse();
+			foreach (KeyValuePair<char, int> kvp in resultDictionary)
+			{
+				resultList.Add(kvp.Value);
+			}
+			resultList.Sort();
 
-			return intList[0];
+			if (resultList.Count > 0)
+			{
+				result = resultList[resultList.Count - 1];
+			}
+			else if (str.Length > 0)
+			{
+				result = 1;
+			}
+			return result;
         }
     }
 }

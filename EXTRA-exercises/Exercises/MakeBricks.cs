@@ -22,26 +22,26 @@ namespace Exercises
 		public bool MakeBricks(int small, int big, int goal)
 		{
 			bool result = false;
-			int totalBig = big * 5;
-			int singleBig = 5;
 
+			int maxBig = goal / 5;
 
-			if ((goal - totalBig) - small == 0)
+			if (maxBig <= big)
+			{
+				goal -= maxBig * 5;
+			}
+			else
+			{
+				goal -= big * 5;
+			}
+			if (goal <= small)
 			{
 				result = true;
-			}
-			else if (goal - totalBig == 0)
-			{
-				result = true;
-			}
-			else if (big != 0)
-			{
-				if ((goal - singleBig) - small == 0)
-				{
-					result = true;
-				}
 			}
 			return result;
+
+
+
 		}
+
 	}
 }
